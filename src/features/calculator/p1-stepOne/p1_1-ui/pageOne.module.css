@@ -1,0 +1,32 @@
+.pageOneMain {
+    text-align: center;
+    width: 65%;
+    margin: 0 auto;
+}
+
+.pageOneMain img {
+    width: 70%;
+}
+
+.pageOneMain_Block {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.pageOneMain_Block div {
+    margin-top: 5px;
+}
+
+.pageOneMain_Block button {
+    width: 180px;
+}
+
+
+
+
+.btn {
+    background-color: blue;
+}
