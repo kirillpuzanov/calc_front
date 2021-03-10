@@ -13,7 +13,7 @@ import Result from '../../features/calculator/p7-result/result';
 import PageFive from '../../features/calculator/p5-stepFive/PageFive';
 
 
-export const LOGIN = '/login';
+export const LOGIN = '/';
 export const FORGOT = '/forgot'
 
 export const PAGE_ONE = '/loadcalculator';
@@ -30,10 +30,10 @@ export const RoutesCalc = () => {
     return <>
         <Switch>
 
-            <Route path={LOGIN} render={() => <Login/>}/>
+            <Route exact path={LOGIN} render={() => <Login/>}/>
             <Route path={FORGOT} render={() => <Forgot/>}/>
 
-            <Route exact path={PAGE_ONE} render={() => <PageOne/>}/>
+            <Route path={PAGE_ONE} render={() => <PageOne/>}/>
             <Route path={PAGE_TWO} render={() => <PageTwo/>}/>
             <Route path={PAGE_THREE} render={() => <PageThree/>}/>
             <Route path={PAGE_FOUR} render={() => <Page4Pallets/>}/>

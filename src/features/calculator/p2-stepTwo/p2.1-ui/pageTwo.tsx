@@ -47,8 +47,9 @@ const PageTwo: React.FC = () => {
     }
 
 
-    return <Spin spinning={status === 'loading'} delay={0}>
-        <div>
+    return <div>
+    {/*<Spin spinning={status === 'loading'} delay={0}>*/}
+
             <div className={st.p2_wrapper}>
                 <p>Укажите тип упаковки груза</p>
                 {currentBagType.map(el => {
@@ -67,8 +68,8 @@ const PageTwo: React.FC = () => {
                          nextPageLink={PAGE_THREE}
                          disabled={packagingCargo.length === 0}
                          parentClickHandler={setRootClick}/>
+        {/*</Spin>*/}
         </div>
-    </Spin>
 };
 
 export default WithAuthRedirect(PageTwo)

@@ -8,7 +8,7 @@ import {LogoutOutlined} from '@ant-design/icons';
 export const LeftSideBar = () => {
     const {Sider} = Layout
     const dispatch = useDispatch();
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(true);
     const onCollapse = () => {
         setCollapsed(!collapsed);
     };

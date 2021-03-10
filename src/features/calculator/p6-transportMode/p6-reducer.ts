@@ -36,10 +36,10 @@ const slice = createSlice({
     name: 'pageSix',
     initialState,
     reducers: {
-        // setTransportDataAC(state, action: PayloadAction<{ transports: TransportType[] }>) {
-        //     //устанавливаем в стэйт пришедший  массив с траспортом
-        //     state.transports = action.payload.transports
-        // },
+        setTransportDataAC(state, action: PayloadAction<{ transports: TransportType[] }>) {
+            //устанавливаем в стэйт пришедший  массив с траспортом
+            state.selectedTransport = action.payload.transports
+        },
         autoFilterChoiceAC(state, action: PayloadAction<{ totalCargoValue: TotalCargoValueType, transports: TransportType[] }>) {
             //сетаем отфильтрованный массив в state.autoChoiceFiltered
             state.autoChoiceFiltered = filterTransports(action.payload.totalCargoValue, action.payload.transports)
@@ -61,10 +61,6 @@ const slice = createSlice({
         },
 
     },
-    // extraReducers: (builder) => {
-    //
-    //
-    // }
 });
 export const pageSixReducer = slice.reducer;
 export const tr_ModeActions = slice.actions;

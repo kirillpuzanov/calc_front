@@ -2,10 +2,11 @@ import axios from 'axios';
 
 export const instance = axios.create({
     //локально:
-    baseURL: 'http://localhost:3007/',
+    // baseURL: 'http://localhost:3007/',
 
-    // gh-pages:
-    // baseURL: 'залить бэк на хероку !!! ',
+    // heroku:
+
+    baseURL: 'https://rocky-mountain-88027.herokuapp.com/',
     withCredentials:true
 
 })
