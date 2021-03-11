@@ -12,25 +12,6 @@ const initialState = {
 }
 
 //thunk's
-//   createAsyncThunk<что санка возвращает, аргументы которые принимает санка, описание ошибок - rejectValue: {errors: Array<string> } >
-
-// export const getAutoFilterDataTC = createAsyncThunk('pageSix/getAutoFilterData',
-//     async (param, {dispatch, rejectWithValue, getState}) => {
-//         const state = getState() as AppRootStateType
-//         const totalCargoValue = state.payment.totalCargoValue
-//         const transportType = state.payment.loadPlace
-//         try {
-//             dispatch(appActions.setAppStatusAC({status: 'loading'}))
-//             const res = await page6.getAutoFilterData(totalCargoValue, transportType)
-//             dispatch(Tr_ModeActions.setFilterAutoChoiceAC({autoChoiceFiltered: res as TransportType[]}))
-//             dispatch(appActions.setAppStatusAC({status: 'succeeded'}))
-//             return res
-//         } catch (err) {
-//             dispatch(appActions.setAppStatusAC({status: 'failed'}))
-//             return rejectWithValue(err)
-//         }
-//     })
-
 
 const slice = createSlice({
     name: 'pageSix',

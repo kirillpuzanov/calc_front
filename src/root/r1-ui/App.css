@@ -13,17 +13,16 @@
 }
 
 /*  left sideBar */
-.ant-layout-sider {
+.ant-layout-sider  {
     border-right: 1px solid #d1e9ff;
-    max-width: 150px;
-    min-width: 150px;
-    width: 150px;
     background-color: #fff;
+}
+.ant-menu-inline-collapsed{
+    width: 40px;
 }
 
 /*  left sideBar кнопка открытия */
-.ant-layout-sider-trigger {
-    width: 150px;
+.ant-layout-sider-trigger  {
     background: #1890ff;
 }
 
@@ -40,7 +39,7 @@
 
 /* для форм на 2 и 4 странице*/
 .ant-form-item {
-    width: 350px;
+    width: 300px;
     justify-content: space-between;
 }
 

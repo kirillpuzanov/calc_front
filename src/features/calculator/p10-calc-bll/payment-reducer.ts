@@ -10,13 +10,12 @@ import {
     TransportType
 } from '../../../common/types';
 import {
-    determineLoadPlace,
+    determineLoadPlace, getResultPaymentTC,
     setIsWithPallet,
     setPackagingCargoTC,
     setPalletParametersTC,
     setPlacementCargo_totalValueTC,
     setSelectedTransportTC,
-    uploadCargoForm
 } from './payment-thunk';
 
 
@@ -89,18 +88,19 @@ const slice = createSlice({
         builder
             //p1
             .addCase(determineLoadPlace.fulfilled, (state, action) => action.payload)
-            .addCase(uploadCargoForm.pending, (state) => {
-                state.isUpload = 'uploading';
-                console.log(state.isUpload);
-            })
-            .addCase(uploadCargoForm.fulfilled, (state) => {
-                state.isUpload = 'done';
-                console.log(state.isUpload);
-            })
-            .addCase(uploadCargoForm.rejected, (state) => {
-                state.isUpload = 'error';
-                console.log(state.isUpload);
-            })
+            //todo
+            // .addCase(uploadCargoForm.pending, (state) => {
+            //     state.isUpload = 'uploading';
+            //     console.log(state.isUpload);
+            // })
+            // .addCase(uploadCargoForm.fulfilled, (state) => {
+            //     state.isUpload = 'done';
+            //     console.log(state.isUpload);
+            // })
+            // .addCase(uploadCargoForm.rejected, (state) => {
+            //     state.isUpload = 'error';
+            //     console.log(state.isUpload);
+            // })
             //p2
             .addCase(setPackagingCargoTC.fulfilled, (state, action) => {
                 state.packagingCargo = action.payload as PackagingItemType[];
@@ -123,11 +123,11 @@ const slice = createSlice({
             .addCase(setSelectedTransportTC.fulfilled, (state, action) => {
                 state.transports = action.payload as TransportType[];
             })
+            //p7
+            .addCase(getResultPaymentTC.fulfilled, (state, action) => action.payload)
     },
 })
 
-
-//p1
 
 export type paymentStateType = typeof initialState
 export const {

@@ -7,7 +7,7 @@ import {
     TransportType
 } from '../../../common/types';
 
-const getCurrentPaymentId = () => sessionStorage.getItem('currentPaymentId')
+export const getCurrentPaymentId = () => sessionStorage.getItem('currentPaymentId')
 
 
 export const paymentAPI = {
@@ -37,8 +37,12 @@ export const paymentAPI = {
             .then(res => res.data.input_data)
     },
     selectedTransports(transports: TransportType[]) {
-        debugger
         return instance.put('payment/transports', {currentPaymentId: getCurrentPaymentId(), transports})
+            .then(res => res.data.input_data)
+    },
+    resultPayment() {
+        const id = getCurrentPaymentId()
+        return instance.get('payment/result?'+(id ? `id=${id}` : '' ))
             .then(res => res.data.input_data)
     },
 }
